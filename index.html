@@ -23,26 +23,31 @@
     }
 
     header {
-      position: sticky;
+      position: fixed;
       top: 0;
+      width: 100%;
       background: #1a1a1a;
-      padding: 20px;
+      padding: 12px 20px;
       text-align: center;
       z-index: 100;
       box-shadow: 0 2px 8px rgba(0,0,0,0.6);
-      transition: padding 0.3s ease, font-size 0.3s ease;
+      transition: transform 0.4s ease, background 0.3s ease;
+    }
+
+    header.hidden {
+      transform: translateY(-100%);
     }
 
     header h1 {
       margin: 0;
-      font-size: 2em;
+      font-size: 1.5em;
       color: #ffffff;
     }
 
     main {
       max-width: 900px;
       margin: 0 auto;
-      padding: 30px 20px;
+      padding: 80px 20px 30px; /* top padding to make space for header */
     }
 
     h2 {
@@ -129,20 +134,17 @@
   </footer>
 
   <script>
-    // Shrinks header on scroll
     let lastScroll = 0;
     const header = document.getElementById('header');
 
     window.addEventListener('scroll', () => {
-      const current = window.scrollY;
-      if (current > 100 && current > lastScroll) {
-        header.style.padding = '8px 20px';
-        header.style.fontSize = '1.5em';
-      } else if (current < lastScroll) {
-        header.style.padding = '20px';
-        header.style.fontSize = '2em';
+      const currentScroll = window.scrollY;
+      if (currentScroll > lastScroll && currentScroll > 100) {
+        header.classList.add('hidden'); // hide on scroll down
+      } else {
+        header.classList.remove('hidden'); // show on scroll up
       }
-      lastScroll = current <= 0 ? 0 : current;
+      lastScroll = currentScroll;
     });
   </script>
 </body>
