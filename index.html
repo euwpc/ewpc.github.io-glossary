@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glossary – European Windstorm Prediction Center</title>
+  <style>
+    :root {
+      --bg: #0e0e0e;
+      --panel: #141414;
+      --muted: #9aa3ad;
+      --accent: #4aa8ff;
+      --text: #f1f1f1;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: #1a1a1a;
+      padding: 20px;
+      text-align: center;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+      transition: padding 0.3s ease, font-size 0.3s ease;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      color: #ffffff;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+      color: #ffffff;
+      border-bottom: 2px solid #444;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .glossary-list dt {
+      font-weight: 600;
+      margin-top: 20px;
+      color: #fff;
+    }
+
+    .glossary-list dd {
+      margin: 8px 0 16px;
+      color: var(--muted);
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      padding: 20px 0;
+      font-size: 0.9em;
+      border-top: 1px solid #222;
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <h1>European Windstorm Prediction Center</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Glossary of Windstorm Terms</h2>
+      <p>Below you will find definitions and explanations of common terms used when discussing windstorms.</p>
+
+      <dl class="glossary-list">
+        <dt>Windstorm</dt>
+        <dd>A storm with very strong winds but little or no rain, strong enough to cause damage. (Source: Wikipedia)</dd>
+
+        <dt>Extratropical Cyclone</dt>
+        <dd>A low-pressure weather system that forms outside the tropics and is associated with strong winds and frontal boundaries. These are the systems that produce most European windstorms. (Source: Wikipedia)</dd>
+
+        <dt>Jet Stream</dt>
+        <dd>A fast-flowing air current in the upper atmosphere that influences storm development and movement across Europe. (Source: Wikipedia)</dd>
+
+        <dt>Pressure Gradient</dt>
+        <dd>The rate of pressure change between two locations. A steeper gradient means stronger winds. (Source: Britannica)</dd>
+
+        <dt>Gale</dt>
+        <dd>A wind with speeds between 62–74 km/h (39–46 mph) on the Beaufort scale. Often associated with strong low-pressure systems. (Source: Wikipedia)</dd>
+
+        <dt>Beaufort Scale</dt>
+        <dd>A scale for estimating wind speed based on observed sea conditions or land effects, ranging from 0 (calm) to 12 (hurricane). (Source: Britannica)</dd>
+
+        <dt>Downburst</dt>
+        <dd>A powerful downdraft from a thunderstorm that hits the ground and spreads out in all directions, causing damaging winds. (Source: Wikipedia)</dd>
+
+        <dt>Storm Surge</dt>
+        <dd>A rise in sea level caused by strong winds and low pressure from a storm pushing water toward the coast. (Source: NOAA)</dd>
+
+        <dt>Squall Line</dt>
+        <dd>A line of thunderstorms that can produce strong straight-line winds, heavy rain, and sometimes tornadoes. (Source: Wikipedia)</dd>
+
+        <dt>Occluded Front</dt>
+        <dd>A weather front formed when a cold front overtakes a warm front, common in mature extratropical cyclones. (Source: Met Office)</dd>
+
+        <dt>Anticyclone</dt>
+        <dd>A high-pressure system associated with calm, clear weather and light winds. (Source: Wikipedia)</dd>
+
+        <dt>Synoptic Chart</dt>
+        <dd>A weather map showing pressure systems, fronts, and weather observations at a specific time. (Source: Met Office)</dd>
+      </dl>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 European Windstorm Prediction Center
+  </footer>
+
+  <script>
+    // Shrinks header on scroll
+    let lastScroll = 0;
+    const header = document.getElementById('header');
+
+    window.addEventListener('scroll', () => {
+      const current = window.scrollY;
+      if (current > 100 && current > lastScroll) {
+        header.style.padding = '8px 20px';
+        header.style.fontSize = '1.5em';
+      } else if (current < lastScroll) {
+        header.style.padding = '20px';
+        header.style.fontSize = '2em';
+      }
+      lastScroll = current <= 0 ? 0 : current;
+    });
+  </script>
+</body>
+</html>
